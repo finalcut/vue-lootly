@@ -1,28 +1,22 @@
+<!-- single file component; has template at the top, and logic/script at the bottom -->
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="main">
+    <h1>{{ AppTitle }}</h1>
   </div>
 </template>
+<script lang="ts">
+// these decorators are used all over the place in our typescript app.
+import { Component, Vue } from 'vue-property-decorator'
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+// almost everything we create will be a component
+// vue apps are components made up of other components
+@Component({
+  name: 'lootly'
+})
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+export default class extends Vue {
+  // this is a property getter.  Typescript lets us say what type of
+  // value will be returned (string).  It's used up in the template as {{ AppTitle }}
+  get AppTitle (): string { return 'lootly' }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
