@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 import { Vue } from 'vue-property-decorator'
 import App from '@/App.vue'
 import vuetify from '@/plugins/vuetify'

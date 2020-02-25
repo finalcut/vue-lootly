@@ -1,4 +1,3 @@
-import 'reflect-metadata'
 import { container } from 'inversify-props'
 import { Registry } from './Registry'
 

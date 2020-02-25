@@ -37,7 +37,9 @@
       <v-container
         class="fill-height"
         fluid
-      />
+      >
+        <book :model="book" />
+      </v-container>
     </v-content>
     <v-btn
       bottom
@@ -60,6 +62,7 @@ import { inject } from 'inversify-props'
 import { Registry } from './Registry'
 import IBookService from './services/IBookService'
 import Book from './components/book/Book.vue'
+import IBook from './models/IBook'
 
 // almost everything we create will be a component
 // vue apps are components made up of other components
@@ -72,7 +75,7 @@ import Book from './components/book/Book.vue'
 export default class extends Vue {
   // this is a property getter.  Typescript lets us say what type of
   // value will be returned (string).  It's used up in the template as {{ AppTitle }}
-  get AppTitle (): string { return 'lootly' }
+  get AppTitle (): string { return process.env.VUE_APP_TITLE }
 
   @inject(Registry.IBookService)
   private bookService!: IBookService
@@ -80,5 +83,14 @@ export default class extends Vue {
   // some bogus properties to act as placeholders for the layout we're starting with
   private drawer: boolean = false
   private dialog: boolean = false
+
+  private book: IBook | null = null
+
+  async created (): Promise<void> {
+    await this.bookService.get('1').then((result) => {
+      this.book = result
+      console.log(this.book)
+    })
+  }
 }
 </script>
