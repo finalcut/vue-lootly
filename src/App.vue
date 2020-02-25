@@ -13,7 +13,7 @@
       color="blue darken-3"
       dark
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon />
       <v-toolbar-title
         style="width: 300px"
         class="ml-0 pl-4"
@@ -66,5 +66,9 @@ export default class extends Vue {
   // this is a property getter.  Typescript lets us say what type of
   // value will be returned (string).  It's used up in the template as {{ AppTitle }}
   get AppTitle (): string { return 'lootly' }
+
+  // some bogus properties to act as placeholders for the layout we're starting with
+  private drawer: boolean = false
+  private dialog: boolean = false
 }
 </script>
