@@ -1,0 +1,16 @@
+{
+  "books":[
+    {
+      "id": "1",
+      "title": "Milkman: A Novel",
+      "thumbnailUrl": "",
+      "primaryImageUrl": "https://images-na.ssl-images-amazon.com/images/I/41eOX0cBT8L._SX331_BO1,204,203,200_.jpg",
+      "loanedTo": "",
+      "loanedDate": "",
+      "isbn": "1644450003",
+      "author": "Anna Burns",
+      "genre": "fiction",
+      "cover": "paperback"
+    }
+  ]
+}
