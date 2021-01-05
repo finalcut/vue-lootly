@@ -9,7 +9,7 @@
     "api": "json-server --watch ./server/api.json --port 3001"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.4",
     "inversify-props": "^2.0.1",
     "reflect-metadata": "^0.1.13",
